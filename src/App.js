@@ -8,8 +8,10 @@ import {
 import geoJson from "./geoJson.json";
 import { locations } from "./locationData";
 
+import "./App.css";
+
 export default function IndiaMap() {
-  const [selectedState, SetSelectedState] = useState(null);
+  const [selectedState, SetSelectedState] = useState("National Capital Region");
 
   const locationStates = useMemo(() => locations.map((obj) => obj.state), []);
 
@@ -48,7 +50,7 @@ export default function IndiaMap() {
         width: "100%",
         maxWidth: "1100px",
         margin: "50px auto",
-        background: "#f4fafa",
+        background: "#F0F9FA",
         borderRadius: "12px",
         padding: "20px 30px 30px",
         boxShadow: "0 4px 20px rgba(0,0,0,0.05)",
@@ -60,9 +62,8 @@ export default function IndiaMap() {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          gap: "30px",
-          marginBottom: "30px",
-          flexWrap: "wrap",
+          gap: "32px",
+          marginBottom: "48px"
         }}
       >
         {[
@@ -126,7 +127,11 @@ export default function IndiaMap() {
                     <Geography
                       key={geo.rsmKey}
                       geography={geo}
-                      onMouseDown={() => SetSelectedState(stateName)}
+                      onMouseDown={() => {
+                        if (locationStates.includes(stateName)) {
+                          SetSelectedState(stateName);
+                        }
+                      }}
                       style={{
                         default: {
                           fill: getFillColor(
@@ -167,7 +172,11 @@ export default function IndiaMap() {
               .filter((loc) => loc.coords && loc.coords.length === 2)
               .map(({ coords, state }) => (
                 <Marker
-                  onMouseDown={() => SetSelectedState(state)}
+                  onMouseDown={() => {
+                    if (locationStates.includes(state)) {
+                      SetSelectedState(state);
+                    }
+                  }}
                   key={state}
                   coordinates={coords}
                   style={{
@@ -192,44 +201,43 @@ export default function IndiaMap() {
         </div>
 
         {/* 📋 Right-side City List */}
-        {/* {selectedState && selectedStateCities.length > 0 && ( */}
-          <div
-            style={{
-              flexBasis: "35%",
-              background: "#f7fbfc",
-              borderRadius: "12px",
-              padding: "16px",
-              boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
-              maxHeight: "580px",
-              overflowY: "auto",
-              transition: "all 0.3s ease-in-out",
-            }}
-          >
-            <h3 style={{ color: "#333", marginBottom: "12px" }}>
-              {selectedState}
-            </h3>
+        <div
+          style={{
+            flexBasis: "35%",
+            borderRadius: "12px",
+            padding: "16px",
+            maxHeight: "500px",
+            overflowY: "auto",
+            transition: "all 0.3s ease-in-out",
+          }}
+          className="scrollable-city-list"
+        >
+          {/* <h3 style={{ color: "#333", marginBottom: "12px" }}>
+            {selectedState}
+          </h3> */}
 
-            {selectedStateCities.map((city, idx) => (
-              <div
-                key={idx}
-                style={{
-                  background: "white",
-                  padding: "10px 14px",
-                  borderRadius: "8px",
-                  marginBottom: "10px",
-                  boxShadow: "0 1px 4px rgba(0,0,0,0.1)",
-                }}
+          {selectedStateCities.map((city, idx) => (
+            <div
+              key={idx}
+              style={{
+                background: "white",
+                padding: "16px 24px",
+                borderRadius: "12px",
+                marginBottom: "10px",
+                border: "0.5px solid #92A0B3",
+              }}
+            >
+              <span
+                style={{ display: "block", fontSize: "18px", color: "#405261" }}
               >
-                <strong style={{ display: "block", color: "#333" }}>
-                  {city.name}
-                </strong>
-                <span style={{ fontSize: "13px", color: "#777" }}>
-                  {city.address}
-                </span>
-              </div>
-            ))}
-          </div>
-        {/* )} */}
+                {city.name}
+              </span>
+              <span style={{ fontSize: "14px", color: "#405261" }}>
+                {city.address}
+              </span>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

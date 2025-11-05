@@ -1,70 +1,165 @@
-# Getting Started with Create React App
+# 🗺️ India Map – Fortis Hospital Locations
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project displays an **interactive map of India** that highlights **Fortis hospital locations** across various states. It allows users to visualize state-wise hospital data, view detailed information on hover or click, and navigate easily through a clean and responsive UI.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Live Demo  
+🔗 **[View Deployed Site](https://suyashsahu1.github.io/india-map/)**
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 📖 Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- 🗺️ **Interactive India Map** using [`react-simple-maps`](https://www.react-simple-maps.io/).  
+- 📍 **Markers** showing Fortis hospital locations.  
+- 🧭 **Hover effects** for highlighting states and showing hospital counts.  
+- 📋 **Scrollable list view** of cities and hospitals with custom scrollbar styling.  
+- ⚙️ **Optimized rendering** using React hooks (`useMemo`, `useState`) for performance.  
+- 📊 **Dynamic counts** of hospitals shown in the top bar.  
+- 🌗 **Responsive design** for smooth desktop and tablet experience.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🧰 Tech Stack
 
-### `npm run build`
+| Technology | Purpose |
+|-------------|----------|
+| **React.js (v18)** | UI framework |
+| **React Simple Maps** | SVG-based map rendering |
+| **React Router DOM** | Navigation and routing |
+| **GH Pages** | Deployment on GitHub Pages |
+| **CSS / Custom Scrollbar Styling** | UI enhancements |
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## ⚙️ Installation and Setup
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 1️⃣ Clone the repository
+```bash
+git clone https://github.com/suyashsahu1/india-map.git
+cd india-map
+````
 
-### `npm run eject`
+### 2️⃣ Install dependencies
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+npm install
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 3️⃣ Start the development server
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Your app will be running on [http://localhost:3000](http://localhost:3000)
 
-## Learn More
+### 4️⃣ Build for production
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+npm run build
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 5️⃣ Deploy to GitHub Pages
 
-### Code Splitting
+```bash
+npm run deploy
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+> The project automatically builds before deployment using the `predeploy` script.
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🗂️ Project Structure
 
-### Making a Progressive Web App
+```
+india-map/
+├── public/
+│   ├── index.html
+│   └── ...
+├── src/
+│   ├── components/
+│   │   ├── IndiaMap.js        # Interactive India map component
+│   │   ├── CityList.js        # List of cities and hospitals
+│   │   └── TopBar.js          # Top bar with hospital counts
+│   ├── data/
+│   │   ├── geoJson.json       # GeoJSON data for India map
+│   │   └── locationData.js    # Fortis hospital locations
+│   ├── App.js
+│   ├── index.js
+│   └── App.css
+├── package.json
+└── README.md
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## 🏥 Location Data Format
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+The `locationData.js` file stores hospital information:
 
-### Deployment
+```javascript
+export const locations = [
+  {
+    state: "Maharashtra",
+    cities: [
+      { name: "Mumbai", hospitals: 4 },
+      { name: "Pune", hospitals: 2 }
+    ]
+  },
+  {
+    state: "Delhi NCR",
+    cities: [
+      { name: "Gurgaon", hospitals: 3 },
+      { name: "Noida", hospitals: 2 }
+    ]
+  },
+];
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## 🎨 Scrollbar Styling
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Custom scrollbar for city list:
+
+```css
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #D1DAE7;
+  border-radius: 60px;
+  opacity: 0.6;
+}
+```
+
+---
+
+## 🧑‍💻 Developer Notes
+
+* Ensure all coordinates in `locationData.js` are accurate for proper marker placement.
+* Optimize JSON parsing using `useMemo()` for faster state-based lookups.
+* Avoid re-rendering the map unnecessarily by memoizing computed values.
+
+---
+
+## 📦 Deployment Details
+
+* Hosted via **GitHub Pages**
+* Configured with:
+
+  ```json
+  "homepage": "https://suyashsahu1.github.io/india-map/"
+  ```
+* Deployed using `gh-pages` library.
+
+---
+
+## 🪪 License
+
+This project is for **educational and demo purposes** to visualize Fortis Hospital locations across India.
+All hospital data and logos belong to **Fortis Healthcare Limited**.
+
