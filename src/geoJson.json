@@ -16707,7 +16707,7 @@
             [35, 30, 18, 23, 25, 26, 27, 28, 15, 16, 4, 5, 8, 9, 34, 13, 32]
           ],
           "type": "Polygon",
-          "properties": {"st_nm": "Mizoram", "st_code": "15"},
+          "properties": { "st_nm": "Mizoram", "st_code": "15" },
           "id": "Mizoram"
         },
         {
@@ -16721,7 +16721,7 @@
             ]
           ],
           "type": "Polygon",
-          "properties": {"st_nm": "Tamil Nadu", "st_code": "33"},
+          "properties": { "st_nm": "Tamil Nadu", "st_code": "33" },
           "id": "Tamil Nadu"
         },
         {
@@ -16741,7 +16741,7 @@
             ]
           ],
           "type": "Polygon",
-          "properties": {"st_nm": "Madhya Pradesh", "st_code": "23"},
+          "properties": { "st_nm": "Madhya Pradesh", "st_code": "23" },
           "id": "Madhya Pradesh"
         },
         {
@@ -16756,7 +16756,7 @@
             ]
           ],
           "type": "Polygon",
-          "properties": {"st_nm": "Maharashtra", "st_code": "27"},
+          "properties": { "st_nm": "Maharashtra", "st_code": "27" },
           "id": "Maharashtra"
         },
         {
@@ -16770,7 +16770,7 @@
             ]
           ],
           "type": "Polygon",
-          "properties": {"st_nm": "Chhattisgarh", "st_code": "22"},
+          "properties": { "st_nm": "Chhattisgarh", "st_code": "22" },
           "id": "Chhattisgarh"
         },
         {
@@ -16787,7 +16787,7 @@
             [[852]]
           ],
           "type": "MultiPolygon",
-          "properties": {"st_nm": "Gujarat", "st_code": "24"},
+          "properties": { "st_nm": "Gujarat", "st_code": "24" },
           "id": "Gujarat"
         },
         {
@@ -16800,7 +16800,11 @@
             ]
           ],
           "type": "Polygon",
-          "properties": {"st_nm": "Odisha", "st_code": "21", "year": "2011_c"},
+          "properties": {
+            "st_nm": "Odisha",
+            "st_code": "21",
+            "year": "2011_c"
+          },
           "id": "Odisha"
         },
         {
@@ -16842,7 +16846,7 @@
         {
           "arcs": [[459, -424, -415, 457, -471, 471]],
           "type": "Polygon",
-          "properties": {"st_nm": "Goa", "st_code": "30", "year": "2011_c"},
+          "properties": { "st_nm": "Goa", "st_code": "30", "year": "2011_c" },
           "id": "Goa"
         },
         {
@@ -16855,7 +16859,11 @@
             [702]
           ],
           "type": "Polygon",
-          "properties": {"st_nm": "Kerala", "st_code": "32", "year": "2011_c"},
+          "properties": {
+            "st_nm": "Kerala",
+            "st_code": "32",
+            "year": "2011_c"
+          },
           "id": "Kerala"
         },
         {
@@ -16868,7 +16876,7 @@
             ]
           ],
           "type": "Polygon",
-          "properties": {"st_nm": "Telangana", "st_code": "36"},
+          "properties": { "st_nm": "Telangana", "st_code": "36" },
           "id": "Telangana"
         },
         {
@@ -16888,7 +16896,7 @@
             [[667]]
           ],
           "type": "MultiPolygon",
-          "properties": {"st_nm": "West Bengal", "st_code": "19"},
+          "properties": { "st_nm": "West Bengal", "st_code": "19" },
           "id": "West Bengal"
         },
         {
@@ -16937,7 +16945,7 @@
             ]
           ],
           "type": "Polygon",
-          "properties": {"st_nm": "Arunachal Pradesh", "st_code": "12"},
+          "properties": { "st_nm": "Arunachal Pradesh", "st_code": "12" },
           "id": "Arunachal Pradesh"
         },
         {
@@ -16952,7 +16960,7 @@
             ]
           ],
           "type": "Polygon",
-          "properties": {"st_nm": "Assam", "st_code": "18"},
+          "properties": { "st_nm": "Assam", "st_code": "18" },
           "id": "Assam"
         },
         {
@@ -16979,7 +16987,7 @@
             ]
           ],
           "type": "Polygon",
-          "properties": {"st_nm": "Meghalaya", "st_code": "17"},
+          "properties": { "st_nm": "Meghalaya", "st_code": "17" },
           "id": "Meghalaya"
         },
         {
@@ -16990,7 +16998,7 @@
             ]
           ],
           "type": "Polygon",
-          "properties": {"st_nm": "Manipur", "st_code": "14"},
+          "properties": { "st_nm": "Manipur", "st_code": "14" },
           "id": "Manipur"
         },
         {
@@ -17001,27 +17009,8 @@
             ]
           ],
           "type": "Polygon",
-          "properties": {"st_nm": "Tripura", "st_code": "16"},
+          "properties": { "st_nm": "Tripura", "st_code": "16" },
           "id": "Tripura"
-        },
-        {
-          "arcs": [
-            [[1194, 1199]],
-            [[1195]],
-            [[1196]],
-            [[1197]],
-            [[1198]],
-            [[1200]],
-            [[1201]],
-            [[1202]]
-          ],
-          "type": "MultiPolygon",
-          "properties": {
-            "st_nm": "Andaman and Nicobar Islands",
-            "st_code": "35",
-            "year": "2011_c"
-          },
-          "id": "Andaman and Nicobar Islands"
         },
         {
           "arcs": [
@@ -17039,7 +17028,7 @@
             ]
           ],
           "type": "Polygon",
-          "properties": {"st_nm": "Uttar Pradesh", "st_code": "09"},
+          "properties": { "st_nm": "Uttar Pradesh", "st_code": "09" },
           "id": "Uttar Pradesh"
         },
         {
@@ -17069,8 +17058,8 @@
             ]
           ],
           "type": "Polygon",
-          "properties": {"st_nm": "Delhi", "st_code": "07"},
-          "id": "Delhi"
+          "properties": { "st_nm": "National Capital Region", "st_code": "07" },
+          "id": "National Capital Region"
         },
         {
           "arcs": [
@@ -17084,13 +17073,17 @@
             ]
           ],
           "type": "Polygon",
-          "properties": {"st_nm": "Haryana", "st_code": "06"},
+          "properties": { "st_nm": "Haryana", "st_code": "06" },
           "id": "Haryana"
         },
         {
           "arcs": [[1378, 1379, 1330, 1383, 1384, 1381, 1382]],
           "type": "Polygon",
-          "properties": {"st_nm": "Sikkim", "st_code": "11", "year": "2011_c"},
+          "properties": {
+            "st_nm": "Sikkim",
+            "st_code": "11",
+            "year": "2011_c"
+          },
           "id": "Sikkim"
         },
         {
@@ -17104,7 +17097,7 @@
             ]
           ],
           "type": "Polygon",
-          "properties": {"st_nm": "Bihar", "st_code": "10", "year": "2011_c"},
+          "properties": { "st_nm": "Bihar", "st_code": "10", "year": "2011_c" },
           "id": "Bihar"
         },
         {
@@ -17130,7 +17123,11 @@
             [2024, 2025, 2026, 2027, 2028, 2022, 2029, 2030, 2031, 2032]
           ],
           "type": "Polygon",
-          "properties": {"st_nm": "Ladakh", "st_code": "38", "year": "2011_c"},
+          "properties": {
+            "st_nm": "Ladakh",
+            "st_code": "38",
+            "year": "2011_c"
+          },
           "id": "Ladakh"
         },
         {
@@ -17174,7 +17171,7 @@
             ]
           ],
           "type": "Polygon",
-          "properties": {"st_nm": "Punjab", "st_code": "03"},
+          "properties": { "st_nm": "Punjab", "st_code": "03" },
           "id": "Punjab"
         },
         {

@@ -1,19 +1,36 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import {
   ComposableMap,
   Geographies,
   Geography,
   Marker,
 } from "react-simple-maps";
-
 import geoJson from "./geoJson.json";
-
 import { locations } from "./locationData";
 
-const geoUrl = geoJson;
-
 export default function IndiaMap() {
-  const [hoveredState, setHoveredState] = useState(null);
+  const [selectedState, SetSelectedState] = useState(null);
+
+  const locationStates = useMemo(() => locations.map((obj) => obj.state), []);
+
+  const stateCityMap = useMemo(() => {
+    const map = {};
+    locations.forEach(({ state, cities }) => {
+      map[state] = cities;
+    });
+    return map;
+  }, []);
+
+  const selectedStateCities = selectedState
+    ? stateCityMap[selectedState] || []
+    : [];
+
+  const getFillColor = (isHighlighted, selectedState, stateName) =>
+    isHighlighted
+      ? selectedState === stateName
+        ? "#5f9fa3"
+        : "#8fc683"
+      : "#bdbbbc";
 
   return (
     <div
@@ -21,7 +38,7 @@ export default function IndiaMap() {
         position: "relative",
         width: "100%",
         maxWidth: 800,
-        margin: "50px",
+        margin: "50px auto",
       }}
     >
       <ComposableMap
@@ -30,26 +47,45 @@ export default function IndiaMap() {
         width={800}
         height={600}
       >
-        <Geographies geography={geoUrl}>
+        <Geographies geography={geoJson}>
           {({ geographies }) =>
             geographies.map((geo) => {
               const stateName = geo.properties.st_nm;
-              const isHighlighted = true;
+              const isHighlighted = locationStates.includes(stateName);
+
               return (
                 <Geography
                   key={geo.rsmKey}
                   geography={geo}
-                  onMouseEnter={() => setHoveredState(stateName)}
-                  onMouseLeave={() => setHoveredState(null)}
+                  onMouseDown={() => SetSelectedState(stateName)}
                   style={{
                     default: {
-                      fill: isHighlighted ? "green" : "#d9d9d9",
+                      fill: getFillColor(
+                        isHighlighted,
+                        selectedState,
+                        stateName
+                      ),
                       stroke: "#fff",
                       strokeWidth: 0.5,
+                      transition: "fill 0.2s ease-in-out",
+                      outline: "none",
                     },
                     hover: {
-                      fill: "#08519c",
+                      fill: getFillColor(
+                        isHighlighted,
+                        selectedState,
+                        stateName
+                      ),
                       cursor: "pointer",
+                      outline: "none",
+                    },
+                    pressed: {
+                      fill: getFillColor(
+                        isHighlighted,
+                        selectedState,
+                        stateName
+                      ),
+                      outline: "none",
                     },
                   }}
                 />
@@ -58,14 +94,26 @@ export default function IndiaMap() {
           }
         </Geographies>
 
-        {locations.map(({ name, coords }) => (
-          <Marker key={name} coordinates={coords}>
-            <circle r={4} fill="#FF5722" stroke="#fff" strokeWidth={1.5} />
-          </Marker>
-        ))}
+        {locations
+          .filter((loc) => loc.coords && loc.coords.length === 2)
+          .map(({ coords, state }) => (
+            <Marker
+              onMouseDown={() => SetSelectedState(state)}
+              key={state}
+              coordinates={coords}
+              style={{
+                default: { outline: "none" },
+                hover: { fill: "#6fbf73", cursor: "pointer", outline: "none" },
+                pressed: { outline: "none" },
+              }}
+            >
+              <circle r={3} fill="#8fc683" stroke="#1d993f" strokeWidth={1} />
+            </Marker>
+          ))}
       </ComposableMap>
 
-      {hoveredState && (
+      {/* ✅ Show hover info only if cities exist */}
+      {selectedState && selectedStateCities.length > 0 && (
         <div
           style={{
             position: "absolute",
@@ -75,15 +123,15 @@ export default function IndiaMap() {
             padding: "10px",
             borderRadius: "8px",
             boxShadow: "0 2px 8px rgba(0,0,0,0.2)",
+            transition: "opacity 0.2s ease-in-out",
+            outline: "none",
           }}
         >
-          <strong>{hoveredState}</strong>
-          <ul style={{ margin: 0, padding: "4px 0 0 0" }}>
-            {locations
-              .filter((loc) => loc.state === hoveredState)
-              .map((loc) => (
-                <li key={loc.name}>{loc.name}</li>
-              ))}
+          <strong style={{ color: "#e63946" }}>{selectedState}</strong>
+          <ul style={{ margin: 0, padding: "4px 0 0 18px" }}>
+            {selectedStateCities.map((city) => (
+              <li key={city}>{city}</li>
+            ))}
           </ul>
         </div>
       )}
