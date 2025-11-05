@@ -63,7 +63,8 @@ export default function IndiaMap() {
           justifyContent: "center",
           alignItems: "center",
           gap: "32px",
-          marginBottom: "48px"
+          marginBottom: "48px",
+          marginTop: "48px",
         }}
       >
         {[
@@ -75,25 +76,37 @@ export default function IndiaMap() {
           <div
             key={idx}
             style={{
-              background: "white",
-              padding: "10px 20px",
               borderRadius: "10px",
               minWidth: "100px",
               textAlign: "center",
-              boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
+              display: "flex",
+              gap: "24px",
             }}
           >
-            <h2
+            <div
               style={{
                 margin: "0",
-                color: "#2b8a8a",
+                color: "white",
+                background: "#5F9FA3",
                 fontWeight: "700",
-                fontSize: "1.8rem",
+                fontSize: "40px",
+                borderRadius: "8px",
+                padding: "14px 16px",
+                gap: "10px",
+                display: "flex",
               }}
             >
               {item.value}
-            </h2>
-            <span style={{ color: "#555", fontSize: "14px" }}>
+            </div>
+            <span
+              style={{
+                color: "#323130",
+                fontSize: "24px",
+                textAlign: "center",
+                alignItems: "center",
+                display: "flex",
+              }}
+            >
               {item.label}
             </span>
           </div>
@@ -224,15 +237,20 @@ export default function IndiaMap() {
                 padding: "16px 24px",
                 borderRadius: "12px",
                 marginBottom: "10px",
-                border: "0.5px solid #92A0B3",
+                border: "0.5px solid rgba(146, 160, 179, 0.5)",
               }}
             >
               <span
-                style={{ display: "block", fontSize: "18px", color: "#405261" }}
+                style={{
+                  display: "block",
+                  fontSize: "18px",
+                  color: "rgba(64, 82, 97, 1)",
+                  marginBottom: "5px",
+                }}
               >
                 {city.name}
               </span>
-              <span style={{ fontSize: "14px", color: "#405261" }}>
+              <span style={{ fontSize: "14px", color: "rgba(64, 82, 97, 1)" }}>
                 {city.address}
               </span>
             </div>

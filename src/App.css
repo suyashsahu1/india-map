@@ -1,7 +1,13 @@
+/* Add at the top of your App.css or index.css */
+@import url('https://fonts.cdnfonts.com/css/segoe-ui-4');
+
 .App {
   text-align: center;
+  font-family: 'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI Symbol',
+    -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
 }
 
+/* Existing code remains the same */
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -37,6 +43,7 @@
   }
 }
 
+/* Custom Scrollbar */
 .scrollable-city-list::-webkit-scrollbar {
   width: 6px;
   height: 6px;
