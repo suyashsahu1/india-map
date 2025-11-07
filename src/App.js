@@ -203,8 +203,13 @@ export default function IndiaMap() {
               }
             </Geographies>
 
-            {/* {locations
-              .filter((loc) => loc.coords && loc.coords.length === 2)
+            {locations
+              .filter(
+                (loc) =>
+                  loc.coords &&
+                  loc.coords.length === 2 &&
+                  loc.state === "National Capital Region"
+              )
               .map(({ coords, state }) => (
                 <Marker
                   onMouseDown={() => {
@@ -226,7 +231,7 @@ export default function IndiaMap() {
                 >
                   <circle r={3} fill="red" stroke="red" strokeWidth={0.5} />
                 </Marker>
-              ))} */}
+              ))}
           </ComposableMap>
         </div>
 
@@ -236,7 +241,7 @@ export default function IndiaMap() {
             flexBasis: "35%",
             borderRadius: "12px",
             padding: "16px",
-            maxHeight: "500px",
+            maxHeight: "656px",
             overflowY: "auto",
             transition: "all 0.3s ease-in-out",
           }}
