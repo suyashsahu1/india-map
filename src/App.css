@@ -68,14 +68,14 @@
   scrollbar-color: rgba(209, 218, 231, 0.6) transparent;
 }
 
-.stats-card:hover {
+/* .stats-card:hover {
   background: #4cd1bb !important;
   cursor: pointer;
   transform: scale(1.2);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
   transition: all 0.3s ease-in-out;
   font-weight: 800;
-}
+} */
 
 .stats-card {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
