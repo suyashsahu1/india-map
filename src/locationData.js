@@ -4,9 +4,9 @@ export const locations = [
     coords: [75, 19],
     cities: [
       { name: "Mumbai", address: "S L Raheja Hospital, Mahim" },
-      { name: "Mulund", address: "Fortis Hospital, Mulund" },
-      { name: "Vashi", address: "Hiranandani Fortis Hospital, Vashi" },
-      { name: "Kalyan", address: "Fortis Hospital, Kalyan" },
+      { name: "Mumbai", address: "Fortis Hospital, Mulund" },
+      { name: "Mumbai", address: "Hiranandani Fortis Hospital, Vashi" },
+      { name: "Mumbai", address: "Fortis Hospital, Kalyan" },
     ],
   },
   {
@@ -25,21 +25,21 @@ export const locations = [
     cities: [
       {
         name: "Bangaluru",
-        address: "Fortis Hospital, Bannerghatta Road, Bengaluru",
+        address: "Fortis Hospital, Bannerghatta Road",
       },
       {
-        name: "CH Road",
-        address: "Fortis Hospital, Cunningham Road, Bengaluru",
+        name: "Bangaluru",
+        address: "Fortis Hospital, Cunningham Road",
       },
-      { name: "Nagarbhavi", address: "Fortis Hospital, Nagarbhavi, Bengaluru" },
+      { name: "Bangaluru", address: "Fortis Hospital, Nagarbhavi" },
       {
-        name: "Rajaji Nagar",
-        address: "Fortis Hospital, Rajaji Nagar, Bengaluru",
+        name: "Bangaluru",
+        address: "Gleneagles Hospital, Rajaji Nagar",
       },
-      { name: "Kengeri", address: "Fortis Hospital, Kengeri, Bengaluru" },
+      { name: "Bangaluru", address: "Gleneagles Hospital, Kengeri" },
       {
-        name: "Richmond Road",
-        address: "Fortis Hospital, Richmond Town, Bengaluru",
+        name: "Bangaluru",
+        address: "Gleneagles Hospital, Richmond Road",
       },
     ],
   },
@@ -49,59 +49,61 @@ export const locations = [
     cities: [
       {
         name: "Gurgaon",
-        address: "Fortis Memorial Research Institute, Sector 44, Gurgaon",
+        address: "Fortis Memorial Research Institute",
       },
-      { name: "Faridabad", address: "Fortis Escorts Hospital, Faridabad" },
       {
-        name: "Okhla",
-        address: "Fortis Escorts Heart Institute, Okhla, Delhi",
+        name: "Delhi",
+        address: "Fortis Escorts Heart Institute, Okhla",
       },
-      { name: "Vasant Kunj", address: "Fortis Hospital, Vasant Kunj, Delhi" },
+      { name: "Delhi", address: "Fortis Hospital, Vasant Kunj" },
       {
-        name: "Shalimar Bagh",
-        address: "Fortis Hospital, Shalimar Bagh, Delhi",
+        name: "Delhi",
+        address: "Fortis Hospital, Shalimar Bagh",
       },
-      { name: "Noida", address: "Fortis Hospital, Sector 62, Noida" },
-      { name: "Greater Noida", address: "Fortis Hospital, Greater Noida" },
-      { name: "Greater Kailash II", address: "Fortis La Femme, GK II, Delhi" },
-      { name: "Nehru Place", address: "Fortis C-DOC, Nehru Place, Delhi" },
+      { name: "Noida", address: "Fortis Hospital" },
+      { name: "Greater Noida", address: "Fortis Hospital" },
+      { name: "Delhi", address: "Fortis La Femme, Greater Kailash II" },
+      { name: "Delhi", address: "Fortis C-DOC, Nehru Place" },
       {
-        name: "Defence Colony",
-        address: "Fortis Centre, Defence Colony, Delhi",
+        name: "Delhi",
+        address: "Fortis Centre, Defence Colony",
       },
-      { name: "Manesar", address: "Fortis Clinic, Manesar, Haryana" },
+      { name: "Faridabad", address: "Fortis Escorts Hospital" },
+      { name: "Manesar", address: "Fortis Hospital" },
     ],
   },
   {
     state: "West Bengal",
     coords: [87.7, 23],
     cities: [
-      { name: "Kolkata", address: "Fortis Hospital, Anandapur, Kolkata" },
-      { name: "Anandapur", address: "Fortis Hospital, Anandapur, Kolkata" },
-      { name: "Rash Behari", address: "Fortis La Femme, Rash Behari, Kolkata" },
+      { name: "Kolkata", address: "Fortis Hospital, Anandapur" },
+      {
+        name: "Kolkata",
+        address: "Fortis Hospital and Kidney Institute, Rash Behari",
+      },
     ],
   },
   {
     state: "Punjab",
     coords: [75.5, 30.8],
     cities: [
-      { name: "Mohali", address: "Fortis Hospital, Phase 8, Mohali" },
+      { name: "Mohali", address: "Fortis Hospital" },
       {
-        name: "Ludhiana - Mall Road",
-        address: "Fortis Hospital, Mall Road, Ludhiana",
+        name: "Ludhiana",
+        address: "Fortis Hospital, Mall Road",
       },
       {
-        name: "Ludhiana - Chandigarh Road",
-        address: "Fortis Hospital, Chandigarh Road, Ludhiana",
+        name: "Ludhiana",
+        address: "Fortis Hospital, Chandigarh Road",
       },
-      { name: "Amritsar", address: "Fortis Escorts Hospital, Amritsar" },
-      { name: "Jalandhar", address: "Fortis Hospital, Jalandhar" },
+      { name: "Amritsar", address: "Fortis Escorts Hospital" },
+      { name: "Jalandhar", address: "Fortis Hospital" },
     ],
   },
   {
     state: "Chhattisgarh",
     coords: [81.5, 21],
-    cities: [{ name: "Raigarh", address: "Fortis Hospital, Raigarh" }],
+    cities: [{ name: "Raigarh", address: "Fortis Hospital" }],
   },
   {
     state: "Telangana",
@@ -109,13 +111,12 @@ export const locations = [
     cities: [
       {
         name: "Hyderabad",
-        address: "Fortis Hospital, Banjara Hills, Hyderabad",
+        address: "Gleneagles Hospital, Lakdi-Ka-Pul",
       },
       {
-        name: "Lakdi-Ka-Pul",
-        address: "Fortis Hospital, Lakdi-Ka-Pul, Hyderabad",
+        name: "Hyderabad",
+        address: "Gleneagles Hospital, L.B. Nagar",
       },
-      { name: "L.B. Nagar", address: "Fortis Hospital, L.B. Nagar, Hyderabad" },
     ],
   },
   {
@@ -124,8 +125,8 @@ export const locations = [
     cities: [
       { name: "Chennai", address: "Fortis Malar Hospital, Adyar, Chennai" },
       {
-        name: "Perumbakkam - Sholinganallur",
-        address: "Fortis Hospital, Perumbakkam, Sholinganallur, Chennai",
+        name: "Chennai",
+        address: "Gleneagles Hospital, Perumbakkam",
       },
     ],
   },
@@ -133,20 +134,20 @@ export const locations = [
     state: "Uttar Pradesh",
     coords: [],
     cities: [
-      { name: "Noida", address: "Fortis Hospital, Sector 62, Noida" },
-      { name: "Greater Noida", address: "Fortis Hospital, Greater Noida" },
+      { name: "Noida", address: "Fortis Hospital" },
+      { name: "Greater Noida", address: "Fortis Hospital" },
     ],
   },
   {
     state: "Haryana",
     coords: [],
     cities: [
-      { name: "Manesar", address: "Fortis Clinic, Manesar" },
       {
         name: "Gurgaon",
-        address: "Fortis Memorial Research Institute, Gurgaon",
+        address: "Fortis Memorial Research Institute",
       },
-      { name: "Faridabad", address: "Fortis Escorts Hospital, Faridabad" },
+      { name: "Faridabad", address: "Fortis Escorts Hospital" },
+      { name: "Manesar", address: "Fortis Hospital" },
     ],
   },
 ];
