@@ -3,11 +3,10 @@ export const locations = [
     state: "Maharashtra",
     coords: [75, 19],
     cities: [
-      { name: "Mumbai", address: "S L Raheja Hospital, Mahim, Mumbai" },
-      { name: "Mulund", address: "Fortis Hospital, Mulund, Mumbai" },
-      { name: "Vashi", address: "Hiranandani Fortis Hospital, Vashi, Mumbai" },
-      { name: "Kalyan", address: "Fortis Hospital, Kalyan, Mumbai" },
-      { name: "Mahim", address: "S L Raheja Hospital, Mahim, Mumbai" },
+      { name: "Mumbai", address: "S L Raheja Hospital, Mahim" },
+      { name: "Mulund", address: "Fortis Hospital, Mulund" },
+      { name: "Vashi", address: "Hiranandani Fortis Hospital, Vashi" },
+      { name: "Kalyan", address: "Fortis Hospital, Kalyan" },
     ],
   },
   {
@@ -16,7 +15,7 @@ export const locations = [
     cities: [
       {
         name: "Jaipur",
-        address: "Fortis Hospital, Jawahar Lal Nehru Marg, Jaipur",
+        address: "Fortis Escorts Hospital",
       },
     ],
   },
@@ -28,7 +27,6 @@ export const locations = [
         name: "Bangaluru",
         address: "Fortis Hospital, Bannerghatta Road, Bengaluru",
       },
-      { name: "BG Road", address: "Fortis Hospital, BG Road, Bengaluru" },
       {
         name: "CH Road",
         address: "Fortis Hospital, Cunningham Road, Bengaluru",
