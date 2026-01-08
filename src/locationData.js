@@ -50,6 +50,10 @@ export const locations = [
       {
         name: "Gurugram",
         address: "Fortis Memorial Research Institute",
+        image: "/india-map/assets/fortisMemorial.webp",
+        hospitalTitle: "Fortis Memorial Research Institute, Gurugram",
+        description:
+          "Fortis Memorial Research Institute (FMRI) is multi-specialty hospital in Gurgaon. FMRI is one of the best hospitals in Gurgaon. It is called Mecca of Healthcare by some people. It was established in 2012. It has 311+ beds. FMRI is accredited by JCI, NABH and NABL",
       },
       {
         name: "Delhi",
@@ -69,7 +73,14 @@ export const locations = [
         address: "Fortis Centre, Defence Colony",
       },
       { name: "Faridabad", address: "Fortis Escorts Hospital" },
-      { name: "Manesar", address: "Fortis Hospital" },
+      {
+        name: "Manesar",
+        address: "Fortis Hospital",
+        image: "/india-map/assets/fortisMemorial.webp",
+        hospitalTitle: "Fortis Hospital, Manesar",
+        description:
+          "Fortis Hospital, Manesar is a multi-specialty hospital located in Manesar, Haryana. It is part of the Fortis Healthcare network, known for providing quality healthcare services. The hospital offers a range of medical specialties and advanced treatments to cater to the healthcare needs of the community.",
+      },
     ],
   },
   {

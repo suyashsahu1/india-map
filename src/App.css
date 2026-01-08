@@ -78,3 +78,73 @@
 .stats-card {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
 }
+
+.city-card {
+  background: #fff;
+  padding: 16px 24px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  border: 0.5px solid rgba(146, 160, 179, 0.5);
+  cursor: pointer;
+  transition: box-shadow 0.2s ease;
+}
+
+.city-card:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* hidden by default */
+.city-hover-card {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.25s ease;
+}
+
+/* show on hover */
+.city-card:hover .city-hover-card {
+  max-height: 120px;
+  opacity: 1;
+  margin-top: 10px;
+}
+
+.hover-title {
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.hover-address {
+  font-size: 13px;
+  color: #5f6b7a;
+}
+
+.hover-popup {
+  position: fixed;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+  z-index: 9999;
+  pointer-events: none;
+}
+
+/* BLENDED ARROW */
+.hover-popup::after {
+  content: "";
+  position: absolute;
+  top: 22px; /* aligns with city name */
+  right: -10px;
+  width: 14px;
+  height: 28px;
+
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.95),
+    rgba(255, 255, 255, 1)
+  );
+
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+
+  filter: drop-shadow(2px 0 3px rgba(0, 0, 0, 0.12));
+}

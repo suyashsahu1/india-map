@@ -12,6 +12,9 @@ import "./App.css";
 
 export default function IndiaMap() {
   const [selectedState, setSelectedState] = useState("National Capital Region");
+  const [hoveredCity, setHoveredCity] = useState(null);
+  const [hoverPos, setHoverPos] = useState({ x: 0, y: 0 });
+
   const mapRef = useRef(null);
 
   const locationStates = useMemo(() => locations.map((obj) => obj.state), []);
@@ -258,24 +261,35 @@ export default function IndiaMap() {
             {selectedStateCities.map((city, idx) => (
               <div
                 key={idx}
+                onMouseEnter={(e) => {
+                  const rect = e.currentTarget.getBoundingClientRect();
+                  setHoverPos({
+                    x: rect.left - 270,
+                    y: rect.top,
+                  });
+                  setHoveredCity(city);
+                }}
+                onMouseLeave={() => setHoveredCity(null)}
                 style={{
                   background: "white",
                   padding: "16px 24px",
                   borderRadius: "12px",
                   marginBottom: "10px",
                   border: "0.5px solid rgba(146, 160, 179, 0.5)",
+                  cursor: "pointer",
                 }}
               >
                 <span
                   style={{
                     display: "block",
                     fontSize: "18px",
+                    fontWeight: 600,
                     color: "rgba(64, 82, 97, 1)",
-                    marginBottom: "5px",
                   }}
                 >
                   {city.name}
                 </span>
+
                 <span
                   style={{ fontSize: "14px", color: "rgba(64, 82, 97, 1)" }}
                 >
@@ -285,6 +299,42 @@ export default function IndiaMap() {
             ))}
           </div>
         </div>
+        {hoveredCity && (
+          <div
+            className="hover-popup"
+            style={{
+              position: "fixed",
+              top: hoverPos.y,
+              left: hoverPos.x,
+              width: "260px",
+              background: "white",
+              borderRadius: "12px",
+              padding: "16px",
+              boxShadow: "0 12px 32px rgba(0,0,0,0.15)",
+              zIndex: 9999,
+              pointerEvents: "none",
+              animation: "fadeIn 0.15s ease-in-out",
+            }}
+          >
+            <img
+              src={hoveredCity.image}
+              alt={hoveredCity.name}
+              style={{
+                width: "100%",
+                height: "auto",
+                borderRadius: "8px",
+                marginBottom: "8px",
+              }}
+            />
+            <p style={{ margin: 0, fontWeight: 700, fontSize: "16px" }}>
+              {hoveredCity.hospitalTitle}
+            </p>
+
+            <p style={{ margin: "8px 0", fontSize: "14px", color: "#5f6b7a" }}>
+              {hoveredCity.description || "No description available."}
+            </p>
+          </div>
+        )}
       </div>
     </div>
   );
