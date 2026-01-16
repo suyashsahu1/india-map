@@ -11,15 +11,15 @@ import { uttarPradeshHospitals } from "./HospitalDataLists/uttarPradesh";
 import { westBangalHospitals } from "./HospitalDataLists/westBangal";
 
 export const locations = [
-  ...maharashtraHospitals,
-  ...rajasthanHospitals,
-  ...karnatakaHospitals,
-  ...nationalCapitalRegionHospitals,
-  ...westBangalHospitals,
-  ...punjabHospitals,
-  ...chattisgarhHospitals,
-  ...telanganaHospitals,
-  ...tamilNaduHospitals,
-  ...uttarPradeshHospitals,
-  ...haryanaHospitals,
+  maharashtraHospitals || {},
+  rajasthanHospitals || {},
+  karnatakaHospitals || {},
+  nationalCapitalRegionHospitals || {},
+  westBangalHospitals || {},
+  punjabHospitals || {},
+  chattisgarhHospitals || {},
+  telanganaHospitals || {},
+  tamilNaduHospitals || {},
+  uttarPradeshHospitals || {},
+  haryanaHospitals || {},
 ];
