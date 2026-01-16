@@ -299,7 +299,7 @@ export default function IndiaMap() {
             ))}
           </div>
         </div>
-        {hoveredCity && (
+        {hoveredCity && hoveredCity.description && (
           <div
             className="hover-popup"
             style={{
@@ -317,8 +317,12 @@ export default function IndiaMap() {
             }}
           >
             <img
-              src={hoveredCity.image}
+              src={
+                hoveredCity.image ||
+                "/india-map/assets/fortisHospitalDefault.png"
+              }
               alt={hoveredCity.name}
+              loading="lazy"
               style={{
                 width: "100%",
                 height: "auto",
