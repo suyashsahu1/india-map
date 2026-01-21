@@ -1,5 +1,6 @@
 import { chattisgarhHospitals } from "./HospitalDataLists/chattisgarh";
 import { haryanaHospitals } from "./HospitalDataLists/haryana";
+import { himachalPradeshHospitals } from "./HospitalDataLists/himachalPradesh";
 import { karnatakaHospitals } from "./HospitalDataLists/karnatka";
 import { maharashtraHospitals } from "./HospitalDataLists/maharashtra";
 import { nationalCapitalRegionHospitals } from "./HospitalDataLists/nationalCapitalRegion";
@@ -22,4 +23,5 @@ export const locations = [
   tamilNaduHospitals || {},
   uttarPradeshHospitals || {},
   haryanaHospitals || {},
+  himachalPradeshHospitals || {},
 ];

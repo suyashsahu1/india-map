@@ -8,7 +8,7 @@ export const uttarPradeshHospitals = {
       image: "/india-map/assets/noida.jpg",
       hospitalAddress: "Fortis Hospital, Noida",
       description:
-        "Fortis Hospital, Noida, is one of the most trusted hospitals in Uttar Pradesh. The hospital is also regarded as a Centre of Excellence in Cardiac Sciences, Oncology, Orthopaedics and Emergency Trauma Care Services. Fortis Noida enjoys the trust of millions of patients. The hospital has some of the finest professionals and the latest technology, and is capable of handling complex cases. Fortis Hospital, Noida, aims at providing compassionate patient care with clinical excellence, to achieve the single-minded objective of 'Saving and Enriching lives'.",
+        "Fortis Hospital, Noida, is one of the most trusted hospitals in Uttar Pradesh. The hospital is also regarded as a Centre of Excellence in Cardiac Sciences, Oncology, Orthopaedics and Emergency Trauma Care Services. Fortis Noida enjoys the trust of millions of patients. The hospital has some of the finest professionals and the latest technology, and is capable of handling complex cases. Fortis Hospital, Noida, aims at providing compassionate patient care with clinical excellence, to achieve the single-minded objective of ‘Saving and Enriching lives.'",
     },
     {
       cityName: "Greater Noida",

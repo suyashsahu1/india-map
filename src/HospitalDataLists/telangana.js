@@ -4,17 +4,17 @@ export const telanganaHospitals = {
   cities: [
     {
       cityName: "Hyderabad",
-      hospitalName: "Gleneagles Hospital, Lakdi-Ka-Pul",
-      hospitalAddress: "Gleneagles Hospital, Lakdi Ka Pul, Hyderabad",
+      hospitalName: "Gleneagles Aware Hospital, LB Nagar",
+      hospitalAddress: "Gleneagles Aware Hospital, LB Nagar, Hyderabad",
       description:
-        "An NABH-accredited tertiary care hospital and a renowned multi-organ transplant centre.",
+        "Gleneagles Aware Hospital, LB Nagar, Hyderabad - a Fortis Network Hospital - is a community tertiary care hospital with established clinical work in all major medical specialties. The hospital has a slew of accreditations, including NABH.",
     },
     {
       cityName: "Hyderabad",
-      hospitalName: "Gleneagles Hospital, L.B. Nagar",
-      hospitalAddress: "Gleneagles Aware Hospital, LB Nagar, Hyderabad",
+      hospitalName: "Gleneagles Hospital, Lakdi-Ka-Pul",
+      hospitalAddress: "Gleneagles Hospital, Lakdi Ka Pul, Hyderabad",
       description:
-        "A community tertiary care hospital offering comprehensive services across major specialities.",
+        "Gleneagles Hospital at Lakdi-ka-pul, Hyderabad - a Fortis Network Hospital - is known as one of the best tertiary care multi-speciality hospitals in India. The NABH accredited hospital is renowned as a multi-organ transplant centre. ",
     },
   ],
 };

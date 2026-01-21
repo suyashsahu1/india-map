@@ -6,18 +6,17 @@ export const westBangalHospitals = {
       cityName: "Kolkata",
       hospitalName: "Fortis Hospital, Anandapur",
       image: "/india-map/assets/anandapur.jpg",
-      hospitalAddress: "Fortis Hospital, Anandapur, Kolkata",
+      hospitalAddress: "Fortis Hospital Anandapur, Kolkata",
       description:
-        "Fortis Hospital, Anandapur is a leading quaternary and tertiary care hospital known for advanced treatments, modern infrastructure, and expert clinicians serving Eastern India and neighbouring countries.",
+        "With a glorious legacy of over two decades, Fortis Hospital, Anandapur, is an outstanding quaternary and tertiary care facility. The hospital has a team of renowned clinicians and well-trained nurses, and offers exceptional patient care in all the major specialities. The hospital receives patients not only from all over West Bengal but also from neighbouring countries such as Nepal, Bhutan Bangladesh and Myanmar. Fortis Anandapur is well equipped with the latest technology and infrastructure for treating complex conditions.",
     },
     {
       cityName: "Kolkata",
-      hospitalName: "Fortis Hospital and Kidney Institute, Rash Behari",
+      hospitalName: "Fortis Hospital and Kidney Institute",
       image: "/india-map/assets/rashBehari.jpg",
-      hospitalAddress:
-        "Fortis Hospital and Kidney Institute, Rash Behari, Kolkata",
+      hospitalAddress: "Fortis Hospital and Kidney Institute, Kolkata",
       description:
-        "Fortis Hospital and Kidney Institute is a specialised centre focused exclusively on renal care, urology, and nephrology, delivering advanced kidney treatments for patients across Eastern India.",
+        "Fortis Hospital and Kidney Institute, is a one-of-its-kind specialised medical facility focused exclusively on Renal Care. Over the years, it has become a pioneer in introducing the most advanced technologies and equipment to deliver unparalleled treatments for all kinds of Urology and Nephrology diseases not only for patients from West Bengal, but also for the entire eastern region. ",
     },
   ],
 };

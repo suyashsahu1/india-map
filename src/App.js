@@ -11,7 +11,9 @@ import { locations } from "./locationData";
 import "./App.css";
 
 export default function IndiaMap() {
-  const [selectedState, setSelectedState] = useState("National Capital Region");
+  const [selectedState, setSelectedState] = useState(
+    "National Capital Region (NCR)",
+  );
   const [hoveredCity, setHoveredCity] = useState(null);
   const [hoverPos, setHoverPos] = useState({ x: 0, y: 0 });
 
@@ -40,19 +42,19 @@ export default function IndiaMap() {
 
   const totalStates = locations.length;
 
-  const allCities = locations.flatMap((state) => state.cities);
+  const allHospitals = locations.flatMap((state) => state.cities);
 
-  const uniqueCities = Array.from(
-    new Set(allCities.map((cities) => cities?.name?.toLowerCase()))
+  const uniqueHospitals = Array.from(
+    new Set(allHospitals.map((hospital) => hospital?.hospitalAddress)),
   );
 
-  const totalHospitals = uniqueCities.length;
+  const totalHospitals = uniqueHospitals.length;
 
   // 👇 Detect click outside the map
   useEffect(() => {
     function handleClickOutside(event) {
       if (mapRef.current && !mapRef.current.contains(event.target)) {
-        setSelectedState("National Capital Region"); // reset selection
+        setSelectedState("National Capital Region (NCR)"); // reset selection
       }
     }
 
@@ -109,7 +111,7 @@ export default function IndiaMap() {
                         if (locationStates.includes(stateName)) {
                           setSelectedState(stateName);
                         } else {
-                          setSelectedState("National Capital Region");
+                          setSelectedState("National Capital Region (NCR)");
                         }
                       }}
                       style={{
@@ -117,7 +119,7 @@ export default function IndiaMap() {
                           fill: getFillColor(
                             isHighlighted,
                             selectedState,
-                            stateName
+                            stateName,
                           ),
                           stroke: "#fff",
                           strokeWidth: 0.5,
@@ -128,7 +130,7 @@ export default function IndiaMap() {
                           fill: getFillColor(
                             isHighlighted,
                             selectedState,
-                            stateName
+                            stateName,
                           ),
                           cursor: "pointer",
                           outline: "none",
@@ -137,7 +139,7 @@ export default function IndiaMap() {
                           fill: getFillColor(
                             isHighlighted,
                             selectedState,
-                            stateName
+                            stateName,
                           ),
                           outline: "none",
                         },
@@ -195,7 +197,7 @@ export default function IndiaMap() {
           >
             {[
               { label: "States", value: totalStates },
-              { label: "Healthcare Facilities", value: 33 || totalHospitals },
+              { label: "Healthcare Facilities", value: totalHospitals },
               // { label: "Vision", value: "01" },
               // { label: "Mission", value: "01" },
             ].map((item, idx) => (
@@ -287,14 +289,14 @@ export default function IndiaMap() {
                     color: "rgba(64, 82, 97, 1)",
                   }}
                 >
-                  {city.hospitalName}
+                  {city.hospitalAddress}
                 </span>
 
-                <span
+                {/* <span
                   style={{ fontSize: "14px", color: "rgba(64, 82, 97, 1)" }}
                 >
                   {city.cityName}
-                </span>
+                </span> */}
               </div>
             ))}
           </div>
@@ -319,7 +321,7 @@ export default function IndiaMap() {
             <img
               src={
                 hoveredCity.image ||
-                "/india-map/assets/fortisHospitalDefault.png"
+                "/india-map/assets/fortisHospitalDefault.jpg"
               }
               alt={hoveredCity.name}
               loading="lazy"

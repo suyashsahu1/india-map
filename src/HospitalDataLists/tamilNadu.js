@@ -4,13 +4,6 @@ export const tamilNaduHospitals = {
   cities: [
     {
       cityName: "Chennai",
-      hospitalName: "Fortis Malar Hospital, Adyar",
-      hospitalAddress: "Gleneagles Hospital, Adyar, Chennai",
-      description:
-        "Gleneagles Hospital, Adyar – a Fortis Network Hospital  –  is a multi-speciality tertiary care hospital renowned for its commitment to the wellbeing of patients.",
-    },
-    {
-      cityName: "Chennai",
       hospitalName: "Gleneagles Hospital, Perumbakkam",
       hospitalAddress: "Gleneagles Hospital, Perumbakkam, Chennai",
       description:
