@@ -68,15 +68,17 @@ export default function IndiaMap() {
   const scheduleClose = () => {
     closeTimeoutRef.current = setTimeout(() => {
       setHoveredCity(null);
-    }, 200); // adjust: 150–300 feels best
+    }, 200);
   };
 
   const cancelClose = () => {
-    if (closeTimeoutRef.current) {
-      clearTimeout(closeTimeoutRef.current);
+    if (closeTimeoutRef?.current) {
+      clearTimeout(closeTimeoutRef?.current);
       closeTimeoutRef.current = null;
     }
   };
+
+  const isNode = (el) => el instanceof Node;
 
   return (
     <div
@@ -296,14 +298,21 @@ export default function IndiaMap() {
                   setHoverPos({
                     x: rect.left - 270,
                     y: Math.max(top, 20),
+                    arrowTop: rect.top - Math.max(top, 20) + 16,
                   });
                   setHoveredCity(city);
                 }}
                 onMouseLeave={(e) => {
-                  // if going into popup, do nothing
-                  if (popupRef.current?.contains(e.relatedTarget)) {
+                  const target = e.relatedTarget;
+
+                  if (
+                    target &&
+                    isNode(target) &&
+                    popupRef.current?.contains(target)
+                  ) {
                     return;
                   }
+
                   scheduleClose();
                 }}
                 style={{
@@ -344,10 +353,20 @@ export default function IndiaMap() {
               left: hoverPos.x,
               width: "260px",
               zIndex: 9999,
+              "--arrow-top": `${hoverPos.arrowTop}px`,
             }}
             onMouseEnter={cancelClose}
             onMouseLeave={(e) => {
-              if (cityRef.current?.contains(e.relatedTarget)) return;
+              const target = e.relatedTarget;
+
+              if (
+                target &&
+                isNode(target) &&
+                cityRef.current?.contains(target)
+              ) {
+                return;
+              }
+
               scheduleClose();
             }}
           >

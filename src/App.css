@@ -122,7 +122,7 @@
 .hover-popup::after {
   content: "";
   position: absolute;
-  top: 22px; /* aligns with city name */
+  top: var(--arrow-top);
   right: -10px;
   width: 14px;
   height: 28px;
